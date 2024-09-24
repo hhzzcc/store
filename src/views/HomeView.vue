@@ -31,6 +31,10 @@ function onSearch() {}
 </script>
 
 <style lang="less" module>
+.Container {
+  padding-bottom: 24px;
+}
+
 .Title {
   display: flex;
   justify-content: center;
