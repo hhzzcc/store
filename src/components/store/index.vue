@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.Container" @click="handleCopy">
+  <a href="taobao://" :class="$style.Container" @click="handleCopy">
     <div>
       <img :class="$style.Image" :src="props.item.image" />
       <div :class="$style.Title">{{ props.item.title }}</div>
@@ -11,7 +11,7 @@
       />
       <div>点击复制链接，打开淘宝app下单</div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script setup>
@@ -41,6 +41,7 @@ function handleCopy() {
   box-shadow: 0 0 4px #aaa;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: unset;
 
   .Image {
     display: block;
