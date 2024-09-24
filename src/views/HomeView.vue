@@ -4,7 +4,7 @@
       这里没有刷单、买排名、买评论，只有我们精心挑选、亲自体验的优质店铺
     </div>
 
-    <div :class="$style.Search">
+    <!-- <div :class="$style.Search">
       <InputSearch
         v-model:value="value"
         placeholder="请输入要搜索的内容，如李子"
@@ -13,7 +13,7 @@
         @search="onSearch"
         style="width: 50vw; min-width: 350px"
       />
-    </div>
+    </div> -->
 
     <div :class="$style.Content">
       <Store v-for="item in storeList" :key="item.id" :item="item" />
@@ -22,14 +22,14 @@
 </template>
 
 <script setup>
-import { InputSearch } from "ant-design-vue";
-import { ref } from "vue";
+// import { InputSearch } from "ant-design-vue";
+// import { ref } from "vue";
 import Store from "@/components/store/index.vue";
 import { storeList } from "./data";
 
-const value = ref("");
+// const value = ref("");
 
-function onSearch() {}
+// function onSearch() {}
 </script>
 
 <style lang="less" module>
