@@ -34,7 +34,7 @@ export const storeList = [
     source: `7(C8G93R9Dtxy)/ CA8888`,
     appType: APP_TYPE.taobao,
     title: "粉钻石榴",
-    des: "「自有基地和工厂｜云南去皮无花果干 更软糯 芭劳奈格莱斯多品种」",
+    des: "「乐作 | 蒙自粉钻石榴 老树石榴 皮薄大粒爆汁清甜微酸 口感饱满」",
     image:
       "https://img.alicdn.com/bao/uploaded/i1/3267081831/O1CN01fW3SDa1POeBSQ0hYI_!!3267081831.png",
   },
