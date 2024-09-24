@@ -14,7 +14,7 @@
     </div>
 
     <div :class="$style.Content">
-      <Store v-for="item in 30" :key="item" />
+      <Store v-for="item in storeList" :key="item.id" :item="item" />
     </div>
   </div>
 </template>
@@ -22,8 +22,8 @@
 <script setup>
 import { InputSearch } from "ant-design-vue";
 import { ref } from "vue";
-// import Search from "@/components/search/index.vue";
 import Store from "@/components/store/index.vue";
+import { storeList } from "./data";
 
 const value = ref("");
 
@@ -36,6 +36,7 @@ function onSearch() {}
   justify-content: center;
   font-size: 48px;
   font-weight: bold;
+  color: #333;
 }
 
 .Search {

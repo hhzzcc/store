@@ -3,6 +3,10 @@
 </template>
 
 <style lang="less">
+html {
+  background-color: #f9ebf7;
+}
+
 * {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
