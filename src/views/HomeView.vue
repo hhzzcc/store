@@ -34,8 +34,9 @@ function onSearch() {}
 
 <style lang="less" module>
 .Title {
-  text-align: center;
-  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
   font-weight: bold;
   color: #333;
 }
