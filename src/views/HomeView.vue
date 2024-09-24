@@ -1,6 +1,8 @@
 <template>
   <div :class="$style.Container">
-    <div :class="$style.Title">welcome to 宝藏店!</div>
+    <div :class="$style.Title">
+      这里没有刷单、买排名、买评论，只有我们精心挑选、亲自体验的优质店铺
+    </div>
 
     <div :class="$style.Search">
       <InputSearch
@@ -31,14 +33,9 @@ function onSearch() {}
 </script>
 
 <style lang="less" module>
-.Container {
-  padding-bottom: 24px;
-}
-
 .Title {
-  display: flex;
-  justify-content: center;
-  font-size: 48px;
+  text-align: center;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
 }
@@ -50,7 +47,7 @@ function onSearch() {}
 }
 
 .Container {
-  padding: 24px 5vw 0 5vw;
+  padding: 24px 5vw 24px 5vw;
 }
 
 .Content {
