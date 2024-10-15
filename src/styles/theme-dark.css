@@ -1,0 +1,5 @@
+:root .theme-dark {
+  --primaryTextColor: #fff;
+  --primaryTextActiveColor: #f56c6c;
+  --primaryBackgroundColor: #000;
+}
