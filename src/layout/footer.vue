@@ -23,7 +23,7 @@ import {
   HomeOutlined,
   StarOutlined,
   SaveOutlined,
-  UserOutlined,
+  SettingOutlined,
 } from "@ant-design/icons-vue";
 import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
@@ -31,7 +31,7 @@ const router = useRouter();
 
 const list = ref([
   {
-    label: "推荐",
+    label: "歌单",
     value: "home",
     icon: HomeOutlined,
   },
@@ -46,9 +46,9 @@ const list = ref([
     icon: StarOutlined,
   },
   {
-    label: "我的",
-    value: "my",
-    icon: UserOutlined,
+    label: "设置",
+    value: "setting",
+    icon: SettingOutlined,
   },
 ]);
 </script>

@@ -10,25 +10,27 @@ const routes = [
         path: "",
         name: "home",
         component: () =>
-          import(/* webpackChunkName: "layout" */ "../views/home/index.vue"),
+          import(/* webpackChunkName: "home" */ "../views/home/index.vue"),
       },
       {
         path: "/recent",
         name: "recent",
         component: () =>
-          import(/* webpackChunkName: "layout" */ "../views/recent/index.vue"),
+          import(/* webpackChunkName: "recent" */ "../views/recent/index.vue"),
       },
       {
         path: "/star",
         name: "star",
         component: () =>
-          import(/* webpackChunkName: "layout" */ "../views/star/index.vue"),
+          import(/* webpackChunkName: "star" */ "../views/star/index.vue"),
       },
       {
-        path: "my",
-        name: "my",
+        path: "/setting",
+        name: "setting",
         component: () =>
-          import(/* webpackChunkName: "layout" */ "../views/my/index.vue"),
+          import(
+            /* webpackChunkName: "setting" */ "../views/setting/index.vue"
+          ),
       },
     ],
   },

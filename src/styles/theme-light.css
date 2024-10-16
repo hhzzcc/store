@@ -1,5 +1,6 @@
 :root .theme-light {
   --primaryTextColor: #333;
+  --primaryBorderColor: rgba(0, 0, 0, 0.2);
   --primaryTextActiveColor: #409eff;
   --primaryBackgroundColor: #fff;
 }

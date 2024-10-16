@@ -1,5 +1,6 @@
 :root .theme-dark {
   --primaryTextColor: #fff;
+  --primaryBorderColor: rgba(255, 255, 255, 0.2);
   --primaryTextActiveColor: #f56c6c;
   --primaryBackgroundColor: #000;
 }
