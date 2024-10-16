@@ -99,63 +99,58 @@ const emits = defineEmits(["close"]);
 
 function getDominantColor(imageSrc) {
   return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.crossOrigin = "Anonymous"; // 避免跨域问题
-    img.src = imageSrc;
+    const image = new Image();
+    image.crossOrigin = "Anonymous"; // 避免跨域问题
+    image.src = imageSrc;
 
-    img.onload = () => {
-      // 创建 canvas，并绘制图片
+    image.onload = () => {
       const canvas = document.createElement("canvas");
       const ctx = canvas.getContext("2d");
-      canvas.width = img.width;
-      canvas.height = img.height;
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-      // 获取像素数据
-      const imageData = ctx.getImageData(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      ).data;
-      const colorMap = {};
+      // 设置 canvas 尺寸为图片尺寸
+      canvas.width = image.width;
+      canvas.height = image.height;
 
-      // 遍历每个像素的 RGBA 数据
-      for (let i = 0; i < imageData.length; i += 4) {
-        const r = imageData[i];
-        const g = imageData[i + 1];
-        const b = imageData[i + 2];
-        const a = imageData[i + 3];
+      // 将图片绘制到 canvas 上
+      ctx.drawImage(image, 0, 0);
+
+      // 获取图片的像素数据
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const pixels = imageData.data;
+
+      let totalR = 0,
+        totalG = 0,
+        totalB = 0;
+      let count = 0;
+
+      // 遍历每个像素（每4个值分别代表 R、G、B、A）
+      for (let i = 0; i < pixels.length; i += 4) {
+        const r = pixels[i];
+        const g = pixels[i + 1];
+        const b = pixels[i + 2];
+        const a = pixels[i + 3];
 
         // 忽略透明像素
         if (a === 0) continue;
 
-        // 构建颜色字符串
-        const rgb = `${r},${g},${b}`;
+        // 累加 RGB 值
+        totalR += r;
+        totalG += g;
+        totalB += b;
 
-        // 记录颜色出现频率
-        colorMap[rgb] = (colorMap[rgb] || 0) + 1;
+        count++;
       }
 
-      // 找到出现次数最多的颜色
-      let dominantColor = null;
-      let maxCount = 0;
+      // 计算 RGB 平均值
+      const avgR = Math.round(totalR / count);
+      const avgG = Math.round(totalG / count);
+      const avgB = Math.round(totalB / count);
 
-      for (const color in colorMap) {
-        if (colorMap[color] > maxCount) {
-          maxCount = colorMap[color];
-          dominantColor = color;
-        }
-      }
-
-      if (dominantColor) {
-        resolve(`rgb(${dominantColor})`);
-      } else {
-        reject(new Error("Couldn't determine the dominant color."));
-      }
+      // 返回加权平均的颜色
+      resolve(`rgb(${avgR},${avgG},${avgB})`);
     };
 
-    img.onerror = (err) => reject(err);
+    image.onerror = (err) => reject(err);
   });
 }
 const backgroundColor = ref("");
@@ -202,6 +197,8 @@ onMounted(async () => {});
   display: flex;
   justify-content: flex-end;
   padding: 24px 24px 0 0;
+  position: relative;
+  z-index: 10;
 }
 
 .Mask {

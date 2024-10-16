@@ -7,13 +7,13 @@ html,
 body {
   height: 100%;
   background-color: var(--primaryBackgroundColor);
+  overflow: hidden;
 }
 
 body {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  overflow: auto;
 }
 * {
   font-family: Avenir, Helvetica, Arial, sans-serif;

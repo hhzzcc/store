@@ -40,7 +40,7 @@ export default {
     },
     aspectRatio: {
       type: Number,
-      required: false,
+      default: 1,
     },
     crossOrigin: {
       type: String,
